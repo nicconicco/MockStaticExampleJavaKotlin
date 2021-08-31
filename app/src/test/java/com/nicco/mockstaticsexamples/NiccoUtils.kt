@@ -5,37 +5,37 @@ import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import org.junit.Test
 
-class UtilTest {
+class NiccoUtils {
 
     @Test
     fun ok() {
-        val util = Util()
+        val util = ClassTested()
         mockkStatic(UtilJava::class)
         mockkObject(UtilKotlin)
 
-        every { UtilJava.ok() } returns "Joe"
-        every { UtilKotlin.ok() } returns "Tsai"
+        every { UtilJava.ok() } returns "Carlos"
+        every { UtilKotlin.ok() } returns "Galves"
 
         util.ok()
 
         verify { UtilJava.ok() }
         verify { UtilKotlin.ok() }
 
-        assertEquals("Joe", UtilJava.ok())
-        assertEquals("Tsai", UtilKotlin.ok())
+        assertEquals("Carlos", UtilJava.ok())
+        assertEquals("Galves", UtilKotlin.ok())
     }
 
     @Test
     fun another_test(){
         val uuid = "1234"
-        mockkObject(MyUselessUtils)
-        every { MyUselessUtils.generateUUID() } returns uuid
+        mockkObject(MyDumbUtils)
+        every { MyDumbUtils.generateUUID() } returns uuid
 
-        val util = Util()
-        val result= util.callMyUselessUtils()
+        val util = ClassTested()
+        val result= util.callMyDumbUtils()
         assertTrue(result=="1234")
 
-        unmockkObject(MyUselessUtils)
+        unmockkObject(MyDumbUtils)
     }
 
     @Test

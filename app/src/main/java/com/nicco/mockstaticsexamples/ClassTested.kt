@@ -1,12 +1,12 @@
 package com.nicco.mockstaticsexamples
 
-class Util {
+class ClassTested {
     fun ok() {
         UtilJava.ok()
         UtilKotlin.ok()
     }
 
-    fun callMyUselessUtils(): String {
-        return MyUselessUtils.generateUUID()
+    fun callMyDumbUtils(): String {
+        return MyDumbUtils.generateUUID()
     }
 }

@@ -2,7 +2,7 @@ package com.nicco.mockstaticsexamples
 
 import java.util.*
 
-class MyUselessUtils {
+class MyDumbUtils {
 
     fun fuu() = "Hello world"
 
